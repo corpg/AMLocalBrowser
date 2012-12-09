@@ -1,0 +1,50 @@
+/**
+  * Part of AMLocalBrowser.
+  * Source code distributed under the Simple Public License 2.0.
+  *
+  * Author: Rarenlys (etienne.corpg@gmail.com)
+  * Juillet 2008
+*/
+
+#include "browser.h"
+#include <windows.h>
+
+// Icône du programme:
+ICO ICON MOVEABLE PURE LOADONCALL DISCARDABLE "am.ico"
+
+// Pour donner le style Windows XP au programme 
+// (voir winuser.h pour les définitions):
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "xpmanifest.xml"
+
+// Menu de l'application
+MENUPRINCIPAL MENU
+BEGIN
+	POPUP "Serveurs"
+	BEGIN
+		MENUITEM "Rafraîchir", MENU_SERVER_RAFRAICHIR
+		MENUITEM "Mettre à jour", MENU_SERVER_UPDATE
+	END
+	POPUP "Se Connecter"
+	BEGIN
+		MENUITEM "à l'IP...", MENU_CONNECT_IP
+		MENUITEM "au serveur...", MENU_CONNECT_SERVER
+	END
+	POPUP "Aide"
+	BEGIN
+		MENUITEM "Fichier d'Aide", MENU_HELP
+		MENUITEM SEPARATOR
+		MENUITEM "A propos...", MENU_ABOUT
+	END
+END
+
+//Boites de dialogues
+/*ABOUT DIALOG DISCARDABLE 0, 0, 0, 0
+		STYLE WS_POPUPWINDOW | WS_DLGFRAME | WS_SIZEBOX
+		CAPTION "A propos..."
+		FONT 12, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON "Fermer", IDOK, 56, 50, 42, 12
+	ICON 2, -1, 20, 15, 32, 32
+	LTEXT "Un browser permettant la connection aux serveur LAN Airmaps.", -1, 60, 18, 80, 10
+END
+*/
